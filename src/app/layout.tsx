@@ -1,3 +1,6 @@
+import "./globals.css";
+
+
 import type { Metadata } from "next";
 import { Audiowide } from "next/font/google";
 
@@ -5,7 +8,7 @@ const AudioW = Audiowide({
   weight: "400",
   subsets: ["latin"],
 })
-import "./globals.css";
+
 
 export const metadata: Metadata = {
   title: "Create Next App",
