@@ -1,6 +1,6 @@
 {
   "name": "jaco-botha",
-  "version": "0.1.0",
+  "version": "0.0.0-alpha+001",
   "private": true,
   "scripts": {
     "dev": "next dev",
