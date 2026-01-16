@@ -63,7 +63,7 @@ export default function RootLayout({
             size={100}
           />
           <Navigation
-            itemClassName="text-(--text-primary)"
+            itemClassName="btn"
             items={[
               { label: "Home", href: "/" },
               { label: "Services", href: "/services" },
@@ -75,7 +75,7 @@ export default function RootLayout({
         {children}
         <footer className="bg-(--bg-primary)">
           <BackButton />
-          <Social
+          <Social linkStyle="btn"
             urls={[
               "https://www.linkedin.com/in/jaco-botha-886b7b95/",
               "https://www.facebook.com/jaco.botha.12139",

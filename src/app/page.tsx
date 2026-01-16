@@ -1,6 +1,9 @@
 import Image from "next/image";
 
 import Hero from "@/Components/206ce/Hero";
+import Services from "./services/page";
+import AboutP from "./about/page";
+import Contact from "./contact/page";
 
 export default function Home() {
   return (
@@ -18,6 +21,15 @@ export default function Home() {
         />
 
       </main>
+      <section>
+        <Services />
+      </section>
+      <section>
+        <AboutP />
+      </section>
+      <section>
+        <Contact />
+      </section>
     </div>
   );
 }
