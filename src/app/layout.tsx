@@ -1,12 +1,9 @@
+/* CSS */
+
 import "./globals.css";
 
+/* SEO */
 import type { Metadata } from "next";
-import { Audiowide } from "next/font/google";
-
-const AudioW = Audiowide({
-  weight: "400",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "206_CE Services",
@@ -34,8 +31,23 @@ export const metadata: Metadata = {
   },
 };
 
-import Link from "next/link";
-import Image from "next/image";
+/* FONT */
+import { Audiowide } from "next/font/google";
+
+const AudioW = Audiowide({
+  weight: "400",
+  subsets: ["latin"],
+});
+
+import Logo from "@/Components/206ce/Logo";
+import Navigation from "@/Components/206ce/Navigation";
+
+import BackButton from "@/Components/206ce/BackNav";
+import Social from "@/Components/206ce/Social";
+import ContactInfo from "@/Components/206ce/ContactInfo";
+import Copyright from "@/Components/206ce/copyright";
+
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -45,19 +57,35 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${AudioW.className} antialiased`}>
         <div className="flex flex-row items-center gap-4 bg-(--bg-primary)">
-          <div className="flex flex-row items-center mx-4">
-            <Image src={"/Logo.png"} alt="Logo" width={100} height={100}/>
-            <h1 className="text-(--primary) text-3xl">206_CE</h1>
-          </div>
-          <nav className="border-l-4 border-(--secondary) pl-4 flex flex-row gap-3 text-4xl text-(--primary)">
-            <Link href="/">Home</Link>
-            <Link href="/about">About</Link>
-            <Link href="/contact">Contact</Link>
-          </nav>
+          <Logo
+            text="206_CE"
+            imagePath="/Logo.png"
+            size={100}
+          />
+          <Navigation
+            itemClassName="text-(--text-primary)"
+            items={[
+              { label: "Home", href: "/" },
+              { label: "Services", href: "/services" },
+              { label: "About", href: "/about" },
+              { label: "Contact", href: "/contact" },
+            ]}
+          />
         </div>
         {children}
-        <footer>
-
+        <footer className="bg-(--bg-primary)">
+          <BackButton />
+          <Social
+            urls={[
+              "https://www.linkedin.com/in/jaco-botha-886b7b95/",
+              "https://www.facebook.com/jaco.botha.12139",
+              "https://github.com/206CE",
+              "https://discord.com/users/1337346807100866580",
+              "https://x.com/206Roaches",
+            ]}
+          />
+          <ContactInfo cellphone="+27 079 497 2646" email="jacobotha206@gmail.com"/>
+          <Copyright />
         </footer>
       </body>
     </html>
