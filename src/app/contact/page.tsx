@@ -1,4 +1,4 @@
-import Contacts from "@/Components/206ce/Contacts";
+import Contacts from "@/206ce/Contacts";
 
 export default function Contact() {
   return (

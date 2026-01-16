@@ -8,14 +8,11 @@
   --tertiary: #FF6B35;
   --text-primary: #FFD166;
   --text-secondary: var(--secondary);
+  --text-tertiary: var(--tertiary);
+  --border: rgba(255, 255, 255, 0.171);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+
 
 @media (prefers-color-scheme: dark) {
   :root {

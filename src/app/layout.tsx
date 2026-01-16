@@ -39,13 +39,13 @@ const AudioW = Audiowide({
   subsets: ["latin"],
 });
 
-import Logo from "@/Components/206ce/Logo";
-import Navigation from "@/Components/206ce/Navigation";
+import Logo from "@/206ce/Logo";
+import Navigation from "@/206ce/Navigation";
 
-import BackButton from "@/Components/206ce/BackNav";
-import Social from "@/Components/206ce/Social";
-import ContactInfo from "@/Components/206ce/ContactInfo";
-import Copyright from "@/Components/206ce/copyright";
+import BackButton from "@/206ce/BackNav";
+import Social from "@/206ce/Social";
+import ContactInfo from "@/206ce/ContactInfo";
+import Copyright from "@/206ce/CopyRight";
 
 
 export default function RootLayout({
@@ -55,11 +55,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${AudioW.className} antialiased`}>
+      <body className={`bg-(--bg-primary) ${AudioW.className} antialiased`}>
         <div className="flex flex-row items-center gap-4 bg-(--bg-primary)">
           <Logo
             text="206_CE"
-            imagePath="/Logo.png"
+            imagePath="/Logos.webp"
             size={100}
           />
           <Navigation
@@ -73,7 +73,7 @@ export default function RootLayout({
           />
         </div>
         {children}
-        <footer className="bg-(--bg-primary)">
+        <footer className="bg-(--bg-primary) pt-4">
           <BackButton />
           <Social linkStyle="btn"
             urls={[

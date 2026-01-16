@@ -1,4 +1,4 @@
-import About from "@/Components/206ce/About";
+import About from "@/206ce/About";
 
 export default function AboutP() {
   return (

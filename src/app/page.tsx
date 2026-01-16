@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import Hero from "@/Components/206ce/Hero";
+import Hero from "@/206ce/Hero";
 import Services from "./services/page";
 import AboutP from "./about/page";
 import Contact from "./contact/page";
@@ -8,14 +8,14 @@ import Contact from "./contact/page";
 export default function Home() {
   return (
     <div className="bg-(--bg-primary)">
-      <main className="flex flex-col items-center">
+      <main className="">
         <Hero
           title="206_CE"
           tagline="Simplify Everything"
           ctas={[{ label: "Contact", href: "/contact" }]}
-          itemformat=""
+          itemformat="btn"
           listformat=""
-          imageSrc="/Logo.png"
+          imageSrc="/Logos.webp"
           imageAlt="Company Logo"
           imageSize={200}
         />
