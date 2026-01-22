@@ -58,12 +58,12 @@ export default function RootLayout({
       <body className={`bg-(--bg-primary) ${AudioW.className} antialiased`}>
         <div className="flex flex-row items-center gap-4 bg-(--bg-primary)">
           <Logo
-            text="206_CE"
+            text="_CE_206_"
             imagePath="/Logos.webp"
             size={100}
           />
           <Navigation
-            itemClassName="btn"
+            itemClassName="btn cursor-blink "
             items={[
               { label: "Home", href: "/" },
               { label: "Services", href: "/services" },

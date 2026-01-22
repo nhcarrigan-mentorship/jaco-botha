@@ -14,21 +14,21 @@ export default function Services() {
                 "From basic to advanced websites custom built with added Content Management Systems that Users can update themselves.",
               imgUrl: "/Web_Development.png",
               imgSize: 200,
-              link: "/",
+              link: "/services/webdev",
             },
             {
               title: "Service Management",
               description: "We manage your services to retain clients.",
               imgUrl: "/service_management.png",
               imgSize: 200,
-              link: "/",
+              link: "/services/servicemanagement",
             },
             {
               title: "Training & Tutoring",
               description: "We teach and train anyone who needs to excel",
               imgUrl: "/Training_Learning.png",
               imgSize: 200,
-              link: "/",
+              link: "/services/training",
             },
           ]}
           layout="grid"

@@ -1,4 +1,4 @@
-import Image from "next/image";
+
 
 import Hero from "@/206ce/Hero";
 import Services from "./services/page";
@@ -8,6 +8,9 @@ import Contact from "./contact/page";
 export default function Home() {
   return (
     <div className="bg-(--bg-primary)">
+      <div>
+ 
+      </div>
       <main className="">
         <Hero
           title="206_CE"
@@ -19,7 +22,6 @@ export default function Home() {
           imageAlt="Company Logo"
           imageSize={200}
         />
-
       </main>
       <section>
         <Services />

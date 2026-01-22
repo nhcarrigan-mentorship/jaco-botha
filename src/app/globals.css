@@ -1,29 +1,142 @@
 @import "tailwindcss";
+@tailwind base;
 
 :root {
-  --bg-primary: #0A0A10;
-  --bg-secondary: #12121D;
-  --primary: #FFD166;
-  --secondary: #4F83CA;
-  --tertiary: #FF6B35;
-  --text-primary: #FFD166;
+  --bg-primary: #0a0a10;
+  --bg-secondary: #12121d;
+  --primary: #ffd166;
+  --secondary: #4f83ca;
+  --tertiary: #ff6b35;
+  --text-primary: #ffd166;
   --text-secondary: var(--secondary);
   --text-tertiary: var(--tertiary);
   --border: rgba(255, 255, 255, 0.171);
 }
 
+/* class present on html after switch or next-themes*/
+.dark {
 
+}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Typography Hierarchy */
+/* 1 text-hook  Extra bold, tight line spacing 1.1 tracking-tighter*/
+
+/* 2 text- headlines <h1> <h2> <h3> Bold/semibold space above */
+/* 3 text- Copy accessability Medium-contrast weight 400 line height: 1.5-1.6, max width 65 chars per line*/
+/* 4 text- intro  larger than body text 1.25rem weight lighter 300 - 400 */
+/* 5 text- suplimental  Captions, dates, author names  */
+/* 6 text-btn all caps heavy weight clickable */
+/* 7 text- system error messages alerts, semantic colors red / green*/
+
+/* Navigaion / Interact */
+/* The feel - interactive states */
+
+@layer base {
+  body {
+    /* Define the default focus ring for accessibility */
+    :focus-visible {
+    }
+
+    /* Standardize transitions for all interactive elements */
+    a,
+    button,
+    select,
+    input {
+    }
   }
 }
 
+/* The structure - Navigaion patterns*/
+@layer components {
+  /* The "Nav Link" - used in Headers, Footers, and Sidebars */
+  .nav-link {
+  }
+
+  /* Active State - helps the user know "You Are Here" */
+  .nav-link-active {
+  }
+
+  /* Dropdown Menu Item */
+  .menu-item {
+  }
+}
+/* The Action - Button Hierarchy */
+
+@layer components {
+  /* Primary Action: High Visual Weight */
+  .btn-primary {
+
+  }
+
+  /* Secondary Action: Low Visual Weight */
+  .btn-secondary {
+
+  }
+
+  /* Ghost/Tertiary Action: For "Cancel" or "Go Back" */
+  .btn-ghost {
+
+  }
+}
+
+
+/* The Interaction - Feedback */
+@layer utilities {
+  /* Skeleton Loading Pattern */
+  .animate-skeleton {
+
+  }
+
+  /* Form Focus State */
+  .input-focus {
+
+  }
+}
+
+/* Form Styles*/
+
+@layer base {
+  /* Remove default browser styling for a clean slate */
+  input, textarea, select {
+
+  }
+}
+
+@layer components {
+  /* 1. THE LABEL (Hierarchy: Level 4 - Small & Bold) */
+  .form-label {
+
+  }
+
+  /* 2. THE INPUT (The Container) */
+  .form-input {
+    
+  }
+
+  /* Interaction: Focus State */
+  .form-input:focus {
+
+  }
+
+  /* Feedback: Error State */
+  .form-input-error {
+
+  }
+
+  /* 3. HELP TEXT / ERROR MESSAGE */
+  .form-helper {
+
+  }
+
+  .form-error-msg {
+
+  }
+}
+
+/**/
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: var(--bg-primary);
+  color: var(--bg-secondary);
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -36,12 +149,37 @@ body {
   text-transform: uppercase;
   letter-spacing: 2px;
   position: relative;
-  transition: all 0.3s ease;
+  transition: all 0.5s ease;
 }
 
 .btn:hover {
-  background: var(--primary);
   color: var(--bg-primary);
   box-shadow: 0 0 20px var(--glow-primary);
-  transform: translateY(-2px);
+  transform: scale(1.05);
+}
+
+/*micro animaiton*/
+.cursor-blink:hover::after {
+  content: "_";
+  animation: blink 1s step-end infinite;
+  color: var(--secondary);
+}
+
+@keyframes blink {
+  from,
+  to {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+.btn-binary:hover span {
+  display: none;
+}
+.btn-binary:hover::after {
+  content: "_";
+  color: #ffd166;
+  text-shadow: 0 0 10px rgb(255, 215, 0, 0.6);
+  display: block;
 }
