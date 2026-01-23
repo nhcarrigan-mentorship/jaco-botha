@@ -5,7 +5,7 @@ import "./globals.css";
 /* auth0 */
 
 import { Auth0Provider } from "@auth0/nextjs-auth0/client";
-
+import LoginOut from "@/206ce/LoginOut";
 
 
 /* SEO */
@@ -90,9 +90,8 @@ export default function RootLayout({
                 { label: "Contact", href: "/contact" },
               ]}
             />
-            <LoginButton />
-            <Profile />
-            <LogoutButton />
+            <LoginOut />
+
             
             
           </div>

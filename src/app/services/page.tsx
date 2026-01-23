@@ -7,6 +7,7 @@ export default function Services() {
         <ServiceList
           heading="Our Service Offerings"
           subheading="Services Simplified"
+          itemStyle="card"
           services={[
             {
               title: "Website Development",

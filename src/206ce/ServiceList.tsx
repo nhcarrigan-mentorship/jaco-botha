@@ -25,6 +25,7 @@ type ServiceListProps = {
   heading?: string;
   subheading?: string;
   services: ServiceItem[];
+  itemStyle?: string;
   layout?: "grid" | "list";
   columns?: number;
 };
@@ -32,7 +33,7 @@ type ServiceListProps = {
 export default function ServiceList({
   heading,
   subheading,
-  services,
+  services, itemStyle,
   layout = "grid",
   columns = 3,
 }: ServiceListProps) {
@@ -55,16 +56,24 @@ export default function ServiceList({
       <div
         className={`${
           layout === "grid" ? `grid ${gridCols}` : "space-y-8"
-        } gap-8 max-w-7xl mx-auto`}
+        } gap-8 max-w-7xl mx-auto `}
       >
         {services.map((service, idx) => (
           <div
-            className="flex flex-col items-center p-6 border border-(--border) shadow-sm hover:shadow-lg transition-shadow duration-300 bg-(--bg-secondary)"
+            className={`flex flex-col items-center p-6 border border-(--border) shadow-sm hover:shadow-lg transition-shadow duration-300 bg-(--bg-secondary) ${itemStyle}`}
             key={idx}
           >
             {service.link && (
-              <Link className="" href={service.link}>
-                {service.icon && <div className="mb-4 text-(--text-primary) text-3xl">{service.icon}</div>} {/* End Icon */}
+              <Link
+                className=""
+                href={service.link}
+              >
+                {service.icon && (
+                  <div className="mb-4 text-(--text-primary) text-3xl">
+                    {service.icon}
+                  </div>
+                )}{" "}
+                {/* End Icon */}
                 {service.imgUrl && (
                   <Image
                     className="object-cover mb-4"
@@ -75,8 +84,16 @@ export default function ServiceList({
                   />
                 )}{" "}
                 {/* End Image */}
-                {service.title && <h3 className="text-xl font-semibold mb-2">{service.title}</h3>}
-                {service.description && <p className="text-(--text-secondary) mb-4">{service.description}</p>}
+                {service.title && (
+                  <h3 className="text-xl font-semibold mb-2">
+                    {service.title}
+                  </h3>
+                )}
+                {service.description && (
+                  <p className="text-(--text-secondary) mb-4">
+                    {service.description}
+                  </p>
+                )}
               </Link>
             )}
           </div>

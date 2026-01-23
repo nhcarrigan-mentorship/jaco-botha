@@ -4,6 +4,7 @@
 :root {
   --bg-primary: #0a0a10;
   --bg-secondary: #12121d;
+  --bg-tertiary: #141523;
   --primary: #ffd166;
   --secondary: #4f83ca;
   --tertiary: #ff6b35;
@@ -156,6 +157,14 @@ body {
   color: var(--bg-primary);
   box-shadow: 0 0 20px var(--glow-primary);
   transform: scale(1.05);
+}
+
+.card {
+  transition: all 0.5s ease;
+}
+.card:hover {
+  background: var(--bg-tertiary);
+  transform:scale(1.05);
 }
 
 /*micro animaiton*/

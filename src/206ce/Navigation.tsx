@@ -17,6 +17,7 @@ import Link from "next/link";
 import { FaBars, FaTimes, FaChevronDown } from "react-icons/fa";
 import { Menu, MenuButton, MenuItems, MenuItem, Transition } from "@headlessui/react";
 
+
 interface NavItem {
   label: string;
   href?: string;
@@ -84,7 +85,10 @@ export default function Navigation({ items, itemClassName = "" }: NavigationProp
       </Link>
     );
 
+
   return (
+    
+
     <nav className="relative">
       {/* Desktop Menu */}
       <div className="hidden md:flex py-4 gap-2 items-center text-2xl font-extrabold z-20">
