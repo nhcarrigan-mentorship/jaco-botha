@@ -1,6 +1,12 @@
+
 /* CSS */
 
 import "./globals.css";
+/* auth0 */
+
+import { Auth0Provider } from "@auth0/nextjs-auth0/client";
+
+
 
 /* SEO */
 import type { Metadata } from "next";
@@ -46,6 +52,13 @@ import BackButton from "@/206ce/BackNav";
 import Social from "@/206ce/Social";
 import ContactInfo from "@/206ce/ContactInfo";
 import Copyright from "@/206ce/CopyRight";
+import LoginButton from "@/components/LoginButton";
+import Profile from "@/components/Profile";
+import LogoutButton from "@/components/LogoutButton";
+
+
+
+
 
 
 export default function RootLayout({
@@ -53,40 +66,56 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  
+
+
+
+
   return (
     <html lang="en">
       <body className={`bg-(--bg-primary) ${AudioW.className} antialiased`}>
-        <div className="flex flex-row items-center gap-4 bg-(--bg-primary)">
-          <Logo
-            text="_CE_206_"
-            imagePath="/Logos.webp"
-            size={100}
-          />
-          <Navigation
-            itemClassName="btn cursor-blink "
-            items={[
-              { label: "Home", href: "/" },
-              { label: "Services", href: "/services" },
-              { label: "About", href: "/about" },
-              { label: "Contact", href: "/contact" },
-            ]}
-          />
-        </div>
-        {children}
-        <footer className="bg-(--bg-primary) pt-4">
-          <BackButton />
-          <Social linkStyle="btn"
-            urls={[
-              "https://www.linkedin.com/in/jaco-botha-886b7b95/",
-              "https://www.facebook.com/jaco.botha.12139",
-              "https://github.com/206CE",
-              "https://discord.com/users/1337346807100866580",
-              "https://x.com/206Roaches",
-            ]}
-          />
-          <ContactInfo cellphone="+27 079 497 2646" email="jacobotha206@gmail.com"/>
-          <Copyright />
-        </footer>
+        <Auth0Provider>
+          <div className="flex flex-row items-center gap-4 bg-(--bg-primary)">
+            <Logo
+              text="_CE_206_"
+              imagePath="/Logos.webp"
+              size={100}
+            />
+            <Navigation
+              itemClassName="btn "
+              items={[
+                { label: "Home", href: "/" },
+                { label: "Services", href: "/services" },
+                { label: "About", href: "/about" },
+                { label: "Contact", href: "/contact" },
+              ]}
+            />
+            <LoginButton />
+            <Profile />
+            <LogoutButton />
+            
+            
+          </div>
+          {children}
+          <footer className="bg-(--bg-primary) pt-4">
+            <BackButton />
+            <Social
+              linkStyle="btn"
+              urls={[
+                "https://www.linkedin.com/in/jaco-botha-886b7b95/",
+                "https://www.facebook.com/jaco.botha.12139",
+                "https://github.com/206CE",
+                "https://discord.com/users/1337346807100866580",
+                "https://x.com/206Roaches",
+              ]}
+            />
+            <ContactInfo
+              cellphone="+27 079 497 2646"
+              email="jacobotha206@gmail.com"
+            />
+            <Copyright />
+          </footer>
+        </Auth0Provider>
       </body>
     </html>
   );
