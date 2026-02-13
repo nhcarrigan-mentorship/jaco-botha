@@ -1,3 +1,10 @@
+Check Out:
+
+Cypress
+vitest
+
+
+
 Situation Analisis:
 
 Vission, Goal, Mission
@@ -28,7 +35,9 @@ Proposal
 Building:
 
 0.0.+ - Font (woff2 latin only) > layout.tsx        
-0.0.+ - Typography Hierarchy    > globals.css       
+0.0.+ - Typography Hierarchy    > globals.css  
+    
+
 0.+.0 - Navigation / Interact   > globals.css       
 0.+.0 - logo.svg                > public > layout <Navigation>
 0.0.+ - logosm.svg              > public > layout <footer>

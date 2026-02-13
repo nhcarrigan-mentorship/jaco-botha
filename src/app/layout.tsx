@@ -6,6 +6,7 @@ import "./globals.css";
 
 import { Auth0Provider } from "@auth0/nextjs-auth0/client";
 import LoginOut from "@/206ce/LoginOut";
+import Providers from "./providers";
 
 
 /* SEO */
@@ -74,8 +75,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`bg-(--bg-primary) ${AudioW.className} antialiased`}>
-        <Auth0Provider>
-          <div className="flex flex-row items-center gap-4 bg-(--bg-primary)">
+        <Providers>
+          <Auth0Provider>
+            <div className="flex flex-row items-center gap-4 bg-(--bg-primary)">
             <Logo
               text="_CE_206_"
               imagePath="/Logos.webp"
@@ -88,6 +90,7 @@ export default function RootLayout({
                 { label: "Services", href: "/services" },
                 { label: "About", href: "/about" },
                 { label: "Contact", href: "/contact" },
+                { label: "Blog",href: "/blog"},
               ]}
             />
             <LoginOut />
@@ -115,6 +118,7 @@ export default function RootLayout({
             <Copyright />
           </footer>
         </Auth0Provider>
+        </Providers>
       </body>
     </html>
   );

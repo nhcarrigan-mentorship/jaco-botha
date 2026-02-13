@@ -12,10 +12,15 @@
 
 
 "use client";
-import { useState, useEffect, Fragment } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { FaBars, FaTimes, FaChevronDown } from "react-icons/fa";
-import { Menu, MenuButton, MenuItems, MenuItem, Transition } from "@headlessui/react";
+import {
+  DropdownMenu,
+  DropdownMenuTrigger,
+  DropdownMenuContent,
+  DropdownMenuItem,
+} from "@/components/ui/dropdown-menu";
 
 
 interface NavItem {
@@ -40,35 +45,25 @@ export default function Navigation({ items, itemClassName = "" }: NavigationProp
 
   const renderItem = (item: NavItem, closeOnClick = false) =>
     item.dropdown ? (
-      <Menu as="nav" key={item.label} className="z-20">
-        <MenuButton className={`cursor-pointer ${commonLinkClass}`}>
+      <DropdownMenu key={item.label}>
+        <DropdownMenuTrigger className={`cursor-pointer ${commonLinkClass}`}>
           {item.label}
           <FaChevronDown className=" mt-3 ml-2 h-4 w-50" aria-hidden="true" />
-        </MenuButton>
-        <Transition
-          as={Fragment}
-          enter="transition ease-out duration-100"
-          enterFrom="opacity-0 scale-95"
-          enterTo="opacity-100 scale-100"
-          leave="transition ease-in duration-75"
-          leaveFrom="opacity-100 scale-100"
-          leaveTo="opacity-0 scale-95"
-        >
-          <MenuItems className="flex flex-col gap-4 mt-1 absolute z-10   cursor-pointer">
-            {item.dropdown.map((drop) => (
-              <MenuItem key={drop.label}>
-                <Link
-                  href={drop.href}
-                  className={` relative ${commonLinkClass}`}
-                  onClick={closeOnClick ? () => setOpen(false) : undefined}
-                >
-                  {drop.label}
-                </Link>
-              </MenuItem>
-            ))}
-          </MenuItems>
-        </Transition>
-      </Menu>
+        </DropdownMenuTrigger>
+        <DropdownMenuContent className="cursor-pointer">
+          {item.dropdown.map((drop) => (
+            <DropdownMenuItem key={drop.label} asChild>
+              <Link
+                href={drop.href}
+                className={` relative ${commonLinkClass}`}
+                onClick={closeOnClick ? () => setOpen(false) : undefined}
+              >
+                {drop.label}
+              </Link>
+            </DropdownMenuItem>
+          ))}
+        </DropdownMenuContent>
+      </DropdownMenu>
     ) : (
       <Link
         key={item.label}

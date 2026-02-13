@@ -1,6 +1,6 @@
 "use client"
 
-import { Button } from "@headlessui/react";
+import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 import { IoIosArrowBack } from "react-icons/io";
 

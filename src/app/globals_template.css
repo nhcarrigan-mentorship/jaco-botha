@@ -2,16 +2,16 @@
 
 
 :root {
-  --bg-primary: #0a0a10;
-  --bg-secondary: #12121d;
-  --bg-tertiary: #141523;
-  --primary: #ffd166;
-  --secondary: #4f83ca;
-  --tertiary: #ff6b35;
-  --text-primary: #ffd166;
-  --text-secondary: var(--secondary);
-  --text-tertiary: var(--tertiary);
-  --border: rgba(255, 255, 255, 0.171);
+  --bg-primary: ;
+  --bg-secondary: ;
+  --bg-tertiary: ;
+  --primary: ;
+  --secondary: ;
+  --tertiary: ;
+  --text-primary: ;
+  --text-secondary: ;
+  --text-tertiary: ;
+  --border: ;
 }
 
 /* class present on html after switch or next-themes*/
@@ -142,40 +142,30 @@ body {
 }
 
 /* Interactive Buttons */
-.btn {
-  background: var(--bg-primary);
-  border: 1px solid var(--primary);
-  color: var(--primary);
-  padding: 0.5rem 1.5rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  position: relative;
-  transition: all 0.5s ease;
+.btn_1 {
+
 }
 
-.btn:hover {
-  color: var(--bg-primary);
-  box-shadow: 0 0 20px var(--glow-primary);
-  transform: scale(1.05);
+.btn_1:hover {
+
 }
 
 .card {
-  transition: all 0.5s ease;
+
 }
 .card:hover {
-  background: var(--bg-tertiary);
-  transform:scale(1.05);
+
 }
 
 /*micro animaiton*/
+.cursor:hover::after {
 
+}
 
-.btn-binary:hover span {
-  display: none;
+.btn_2 {
+    
 }
-.btn-binary:hover::after {
-  content: "_";
-  color: #ffd166;
-  text-shadow: 0 0 10px rgb(255, 215, 0, 0.6);
-  display: block;
+
+.btn_2:hover span {
 }
+
