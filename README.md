@@ -1,10 +1,3 @@
-Check Out:
-
-Cypress
-vitest
-
-
-
 Situation Analisis:
 
 Vission, Goal, Mission
