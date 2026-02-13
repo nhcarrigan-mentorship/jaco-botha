@@ -43,16 +43,12 @@ const AudioW = Audiowide({
   subsets: ["latin"],
 });
 
-import Logo from "@/206ce/Logo";
 import Navigation from "@/206ce/Navigation";
 
 import BackButton from "@/206ce/BackNav";
 import Social from "@/206ce/Social";
 import ContactInfo from "@/206ce/ContactInfo";
 import Copyright from "@/206ce/CopyRight";
-import LoginButton from "@/components/LoginButton";
-import Profile from "@/components/Profile";
-import LogoutButton from "@/components/LogoutButton";
 import Image from "next/image";
 
 import logo from "../../public/Logos.webp";

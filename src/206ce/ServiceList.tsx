@@ -18,7 +18,7 @@ export type ServiceItem = {
   icon?: ReactNode;
   imgUrl?: string;
   imgSize?: number;
-  link: string;
+  link: string ;
 };
 
 type ServiceListProps = {
