@@ -5,7 +5,7 @@
 
   [{ label: "Contact", href: "/engagement" },
   { label: "Services", dropdown: [
-   { label: "service1", href: "/sarvice1" }
+   { label: "service1", href: "/service1" }
     ]},];
 
 */
@@ -84,9 +84,9 @@ export default function Navigation({ items, itemClassName = "" }: NavigationProp
   return (
     
 
-    <nav className="relative">
+    <nav className="">
       {/* Desktop Menu */}
-      <div className="hidden md:flex py-4 gap-2 items-center text-2xl font-extrabold z-20">
+      <div className="flex gap-1">
         {items.map((item) => renderItem(item))}
       </div>
 

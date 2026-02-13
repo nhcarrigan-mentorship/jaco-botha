@@ -1,4 +1,3 @@
-
 /* CSS */
 
 import "./globals.css";
@@ -6,8 +5,6 @@ import "./globals.css";
 
 import { Auth0Provider } from "@auth0/nextjs-auth0/client";
 import LoginOut from "@/206ce/LoginOut";
-import Providers from "./providers";
-
 
 /* SEO */
 import type { Metadata } from "next";
@@ -56,47 +53,48 @@ import Copyright from "@/206ce/CopyRight";
 import LoginButton from "@/components/LoginButton";
 import Profile from "@/components/Profile";
 import LogoutButton from "@/components/LogoutButton";
+import Image from "next/image";
 
-
-
-
-
+import logo from "../../public/Logos.webp";
 
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  
-
-
-
-
   return (
     <html lang="en">
       <body className={`bg-(--bg-primary) ${AudioW.className} antialiased`}>
-        <Providers>
-          <Auth0Provider>
-            <div className="flex flex-row items-center gap-4 bg-(--bg-primary)">
-            <Logo
-              text="_CE_206_"
-              imagePath="/Logos.webp"
-              size={100}
-            />
-            <Navigation
-              itemClassName="btn "
-              items={[
-                { label: "Home", href: "/" },
-                { label: "Services", href: "/services" },
-                { label: "About", href: "/about" },
-                { label: "Contact", href: "/contact" },
-                { label: "Blog",href: "/blog"},
-              ]}
-            />
-            <LoginOut />
+        <Auth0Provider>
+          <div className="flex items-center space-x-2 gap-4 bg-(--bg-secondary)">
+            <div
+              className="flex gap-1 p-3 items-center "
+              id="Logo"
+            >
+              <Image
+                src={logo}
+                width={50}
+                height={20}
+                alt="Logo"
+              />
+              <h3 className="text-(--primary) text-2xl">CE_206</h3>
+            </div>
 
-            
-            
+            <div className="ml-6">
+              <Navigation
+                itemClassName="btn"
+                items={[
+                  { label: "HOME", href: "/" },
+                  { label: "SERVICES", href: "/services" },
+                  { label: "ABOUT", href: "/about" },
+                  { label: "CONTACT", href: "/contact" },
+                  { label: "BLOG", href: "/blog" },
+                ]}
+              />
+            </div>
+            <div className="mr-1">
+              <LoginOut itemClassName="text-nowrap btn cursor-pointer" />
+            </div>
           </div>
           {children}
           <footer className="bg-(--bg-primary) pt-4">
@@ -118,7 +116,6 @@ export default function RootLayout({
             <Copyright />
           </footer>
         </Auth0Provider>
-        </Providers>
       </body>
     </html>
   );
